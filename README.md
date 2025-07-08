@@ -62,10 +62,10 @@ The Bookstore follows a clean, object-oriented architecture with clear separatio
 
 ## Screenshots
 
-### Application Build and Test Execution
+### Screenshot 1
 ![Demo Application Output 1](screenshots/sc1.png)
 
-### Demo Application Output
+### Screenshot 2
 ![Demo Application Output 2](screenshots/sc2.png)
 
 ## Project Structure
