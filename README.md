@@ -53,10 +53,11 @@ The Bookstore follows a clean, object-oriented architecture with clear separatio
 ┌─────────────────────▼───────────────────────────────────────┐
 │                External Services                            │
 │               (Integration Layer)                           │
-│  ┌─────────────────────────────────────────────────────────┤
-│  │ ShippingService::ship()                                 │
-│  │ MailService::sendEmail()                                │
-│  └─────────────────────────────────────────────────────────┘
+│  ┌─────────────────────────────────────────────────────────┤|
+│  │ ShippingService::ship()                                 │|
+│  │ MailService::sendEmail()                                │|
+│  └─────────────────────────────────────────────────────────┘|
+└─────────────────────┬───────────────────────────────────────┘
 ```
 
 ## Screenshots

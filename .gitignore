@@ -1,0 +1,14 @@
+# Build artifacts
+*.o
+quantum_bookstore
+
+# IDE files
+.vscode/
+.vs/
+*.vcxproj*
+*.sln
+
+# OS files
+.DS_Store
+Thumbs.db
+
