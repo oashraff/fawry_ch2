@@ -44,7 +44,7 @@ A C++ implementation of an online bookstore system that demonstrates object-orie
 ## Building and Running
 
 ### Prerequisites
-- C++17 compatible compiler (GCC 7+, Clang 5+, or MSVC 2017+)
+- C++17 compatible compiler 
 - Make utility
 
 ### Build Commands
@@ -57,12 +57,6 @@ make run
 
 # Clean build artifacts
 make clean
-```
-
-### Manual Compilation
-```bash
-g++ -std=c++17 -Wall -Wextra -O2 -Iinclude -o quantum_bookstore main.cpp src/*.cpp
-./quantum_bookstore
 ```
 
 ## Usage Example
@@ -78,14 +72,14 @@ int main() {
         "978-0134685991", "Effective Modern C++", 2014, 45.99, "Scott Meyers", 10);
     
     auto ebook = std::make_unique<EBook>(
-        "978-1234567890", "Digital C++ Guide", 2023, 29.99, "Jane Doe", "PDF");
+       "978-1035024957", "Think Faster, Talk Smarter", 2023, 14.99, "Matt Abrahams", "PDF");
     
     store.addBook(std::move(paperBook));
     store.addBook(std::move(ebook));
     
     // Purchase books
     double amount = store.buyBook("978-0134685991", 2, 
-        "customer@example.com", "123 Main St");
+        "test@test.com", "Cairo, Egypt");
     
     // Remove outdated books
     auto outdated = store.removeOutdated(2025, 10);
