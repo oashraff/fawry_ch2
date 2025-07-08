@@ -1,6 +1,5 @@
 # Quantum Bookstore
-
-A C++ implementation of an online bookstore system that demonstrates object-oriented design principles, polymorphism, and extensibility.
+A C++ implementation of an online bookstore system that demonstrates object-oriented design principles, polymorphism, and extensibility. 
 
 ## Features
 
@@ -22,9 +21,56 @@ A C++ implementation of an online bookstore system that demonstrates object-orie
 - **Polymorphism**: Virtual functions for type-specific behavior
 - **Modular Structure**: Clear separation between headers and implementations for better organization
 
+## Architecture
+
+The Bookstore follows a clean, object-oriented architecture with clear separation of concerns:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Client Application                       │
+│                       (main.cpp)                           │
+└─────────────────────┬───────────────────────────────────────┘
+                      │
+┌─────────────────────▼───────────────────────────────────────┐
+│                QuantumBookstore                             │
+│              (Business Logic Layer)                         │
+│  ┌─────────────────────────────────────────────────────────┤
+│  │ • addBook()           • removeOutdated()                │
+│  │ • buyBook()           • printInventory()                │
+│  └─────────────────┬───────────────────────────────────────┘
+                      │
+┌─────────────────────▼───────────────────────────────────────┐
+│                   Book (Abstract)                           │
+│                 (Domain Model)                              │
+│  ┌──────────────┬──────────────┬──────────────────────────┐ │
+│  │  PaperBook   │    EBook     │    ShowcaseBook          │ │
+│  │              │              │                          │ │
+│  │ • stock      │ • fileType   │ • not for sale           │ │
+│  │ • shipping   │ • email      │ • display only           │ │
+│  └──────────────┴──────────────┴──────────────────────────┘ │
+└─────────────────────┬───────────────────────────────────────┘
+                      │
+┌─────────────────────▼───────────────────────────────────────┐
+│                External Services                            │
+│               (Integration Layer)                           │
+│  ┌─────────────────────────────────────────────────────────┤
+│  │ ShippingService::ship()                                 │
+│  │ MailService::sendEmail()                                │
+│  └─────────────────────────────────────────────────────────┘
+```
+
+## Screenshots
+
+### Application Build and Test Execution
+![Demo Application Output 1](screenshots/sc1.png)
+
+### Demo Application Output
+![Demo Application Output 2](screenshots/sc2.png)
+
 ## Project Structure
 
 ```
+fawry_ch2/
 ├── include/                 # Header files directory
 │   ├── Book.h              # Abstract base class for all books
 │   ├── BookTypes.h         # Concrete book type declarations
@@ -34,11 +80,13 @@ A C++ implementation of an online bookstore system that demonstrates object-orie
 ├── src/                    # Implementation files directory
 │   ├── Book.cpp           # Book class implementation
 │   ├── BookTypes.cpp      # Book type implementations
+│   ├── Services.cpp       # Service implementations [Placeholders for now]
 │   ├── QuantumBookstore.cpp # Bookstore implementation
 │   └── QuantumBookstoreFullTest.cpp # Test implementations
-├── main.cpp               # Demo application
-├── Makefile              # Build configuration
-└── README.md             # This file
+├── screenshots/           # Application screenshots
+├── main.cpp              # Demo application
+├── Makefile             # Build configuration
+└── README.md            # This file
 ```
 
 ## Building and Running
